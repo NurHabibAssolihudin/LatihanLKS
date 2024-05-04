@@ -1,0 +1,20 @@
+﻿<Window x:Class="LatihanLKSDesktop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LatihanLKSDesktop"
+        mc:Ignorable="d"
+        Title="Login" Height="450" Width="800">
+    <Grid>
+        <Image Height="100" Margin="350,59,350,0" VerticalAlignment="Top" Source="/9391714.png"/>
+        <Label Content="Food XYZ" Margin="342,159,342,0" FontSize="24" FontWeight="Bold" Height="53" VerticalAlignment="Top"/>
+        <TextBox x:Name="input_username" HorizontalAlignment="Left" Margin="298,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" FontSize="16"/>
+        <PasswordBox x:Name="input_password" HorizontalAlignment="Left" Margin="298,254,0,0" VerticalAlignment="Top" Width="263" FontSize="16"/>
+        <Label Content="Username" HorizontalAlignment="Left" Margin="187,213,0,0" VerticalAlignment="Top" FontSize="16" Width="92"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="187,250,0,0" VerticalAlignment="Top" FontSize="16" Width="87"/>
+        <Button Content="Login" HorizontalAlignment="Left" Margin="300,286,0,0" VerticalAlignment="Top" Width="128" FontSize="16" Click="Auth"/>
+        <Button Content="Reset" HorizontalAlignment="Left" Margin="433,286,0,0" VerticalAlignment="Top" Width="128" FontSize="16" Click="Reset"/>
+
+    </Grid>
+</Window>
