@@ -1,0 +1,49 @@
+﻿<Window x:Class="LatihanLKSDesktop.Kasir"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LatihanLKSDesktop"
+        mc:Ignorable="d"
+        Title="Kasir" Height="450" Width="800">
+    <Grid>
+        <Grid HorizontalAlignment="Left" Width="186" Background="#FF20CFFF">
+            <Label Content="KASIR" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+            <Image Height="100" Margin="43,77,43,0" VerticalAlignment="Top" Source="/cashier.png"/>
+            <Label Content="KELOLA&#xD;&#xA;TRANSAKSI" HorizontalAlignment="Center" Margin="0,217,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+            <Button Content="Logout" HorizontalAlignment="Center" Margin="0,347,0,0" VerticalAlignment="Top" Click="Logout"/>
+        </Grid>
+        <Label Content="Form Transaksi" HorizontalAlignment="Left" Margin="219,27,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <Label Content="Pilih Menu" HorizontalAlignment="Left" Margin="219,73,0,0" VerticalAlignment="Top" Width="107"/>
+        <ComboBox x:Name="input_menu" HorizontalAlignment="Left" Margin="219,104,0,0" VerticalAlignment="Top" Width="193" SelectionChanged="PilihMenu">
+            <ComboBoxItem Content="Kode - Nama Menu" Visibility="Collapsed"/>
+        </ComboBox>
+        <Label Content="Harga Satuan" HorizontalAlignment="Left" Margin="219,132,0,0" VerticalAlignment="Top" Width="131"/>
+        <TextBox x:Name="input_harga_satuan" HorizontalAlignment="Left" Margin="219,163,0,0" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" TextChanged="InputHarga"/>
+        <Label Content="Total Harga" HorizontalAlignment="Left" Margin="472,132,0,0" VerticalAlignment="Top" Width="113"/>
+        <TextBox x:Name="input_total_harga" HorizontalAlignment="Left" Margin="472,163,0,0" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Top" Width="193"/>
+        <Label Content="Quantitas" HorizontalAlignment="Left" Margin="472,75,0,0" VerticalAlignment="Top" Width="98"/>
+        <TextBox x:Name="input_quantitas" HorizontalAlignment="Left" Margin="472,106,0,0" VerticalAlignment="Top" Width="193" TextChanged="InputQuantitas"/>
+        <TextBlock x:Name="id_kasir" HorizontalAlignment="Left" Margin="451,35,0,0" TextWrapping="Wrap" Text="Kasir" VerticalAlignment="Top" Background="#FFFF8282" Padding="10,0,10,0"/>
+        <Button Content="Tambah" HorizontalAlignment="Left" Margin="566,207,0,0" VerticalAlignment="Top" Click="InsertIntoKeranjang"/>
+        <Button Content="Reset" Margin="632,207,0,0" VerticalAlignment="Top" Click="ResetDatagrid" HorizontalAlignment="Left" Width="33"/>
+        <Label Content="Keranjang" HorizontalAlignment="Left" Margin="219,217,0,0" VerticalAlignment="Top" Width="131"/>
+        <DataGrid x:Name="datagrid" Margin="219,248,10,118">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="*" Header="ID Transaksi" Binding="{Binding id_transaksi}"/>
+                <DataGridTextColumn Width="*" Header="Kode Barang" Binding="{Binding kode_barang}"/>
+                <DataGridTextColumn Width="*" Header="Nama Barang" Binding="{Binding nama_barang}"/>
+                <DataGridTextColumn Width="*" Header="Harga Satuan" Binding="{Binding harga_satuan}"/>
+                <DataGridTextColumn Width="*" Header="Quantitas" Binding="{Binding quantitas}"/>
+                <DataGridTextColumn Width="*" Header="Subtotal" Binding="{Binding subtotal}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Total Harga" HorizontalAlignment="Left" Margin="219,0,0,87" VerticalAlignment="Bottom" Width="131"/>
+        <Label x:Name="total_harga" Content="0" HorizontalAlignment="Left" Margin="329,0,0,87" VerticalAlignment="Bottom" Width="83"/>
+        <TextBox x:Name="input_pembayaran" HorizontalAlignment="Left" Margin="219,0,0,64" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="193" TextChanged="InputPembayaran"/>
+        <Button Content="Bayar" HorizontalAlignment="Left" Margin="219,0,0,39" VerticalAlignment="Bottom" Width="193" Click="SaveTransaksi"/>
+        <Label Content="Kembalian" HorizontalAlignment="Left" Margin="219,0,0,8" VerticalAlignment="Bottom" Width="131"/>
+        <Label x:Name="kembalian" Content="0" HorizontalAlignment="Left" Margin="329,0,0,8" VerticalAlignment="Bottom" Width="83"/>
+
+    </Grid>
+</Window>
